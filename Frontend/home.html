@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avento - Home</title>
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Header Styles */
+        .header {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-img {
+            width: 50px;
+            height: 50px;
+        }
+
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #1f2937;
+        }
+
+        .location-header {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            background: #f3f4f6;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .location-header:hover {
+            background: #e5e7eb;
+        }
+
+        .location-header i {
+            color: #667eea;
+        }
+
+        .location-header span {
+            color: #374151;
+            font-weight: 500;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .nav-link {
+            color: #4b5563;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 8px 0;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: #667eea;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #667eea;
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .search-icon-btn {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            border: none;
+            background: #f3f4f6;
+            color: #4b5563;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .search-icon-btn:hover {
+            background: #e5e7eb;
+            color: #667eea;
+        }
+
+        .become-pro-btn {
+            padding: 12px 24px;
+            background: #1f2937;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .become-pro-btn:hover {
+            background: #374151;
+            transform: translateY(-2px);
+        }
+
+        /* Main Content */
+        .main-content {
+            margin-top: 80px;
+            padding: 0;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 80px 30px;
+            text-align: center;
+            color: white;
+        }
+
+        .hero-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 30px;
+        }
+
+        .hero-search {
+            max-width: 600px;
+            margin: 0 auto;
+            display: flex;
+            background: white;
+            border-radius: 50px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+        }
+
+        .hero-search input {
+            flex: 1;
+            padding: 20px 30px;
+            border: none;
+            font-size: 1.1rem;
+            outline: none;
+        }
+
+        .hero-search button {
+            padding: 20px 40px;
+            background: #667eea;
+            color: white;
+            border: none;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .hero-search button:hover {
+            background: #5a6fd6;
+        }
+
+        /* Services Section */
+        .services-section {
+            padding: 60px 30px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #1f2937;
+        }
+
+        .see-all-link {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            transition: gap 0.3s ease;
+        }
+
+        .see-all-link:hover {
+            gap: 10px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 20px;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 16px;
+            padding: 20px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border: 2px solid transparent;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-color: #667eea;
+        }
+
+        .service-icon {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            font-size: 1.8rem;
+        }
+
+        .service-name {
+            font-weight: 600;
+            color: #1f2937;
+            margin-bottom: 5px;
+        }
+
+        .service-count {
+            font-size: 0.85rem;
+            color: #6b7280;
+        }
+
+        /* Categories Colors */
+        .bg-purple { background: rgba(102, 126, 234, 0.15); color: #667eea; }
+        .bg-green { background: rgba(34, 197, 94, 0.15); color: #22c55e; }
+        .bg-orange { background: rgba(249, 115, 22, 0.15); color: #f97316; }
+        .bg-blue { background: rgba(59, 130, 246, 0.15); color: #3b82f6; }
+        .bg-pink { background: rgba(236, 72, 153, 0.15); color: #ec4899; }
+        .bg-teal { background: rgba(20, 184, 166, 0.15); color: #14b8a6; }
+        .bg-red { background: rgba(239, 68, 68, 0.15); color: #ef4444; }
+        .bg-yellow { background: rgba(234, 179, 8, 0.15); color: #eab308; }
+
+        /* Featured Section */
+        .featured-section {
+            background: #f9fafb;
+            padding: 60px 30px;
+        }
+
+        .featured-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .featured-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .featured-card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+
+        .featured-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .featured-image {
+            width: 100%;
+            height: 160px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+        }
+
+        .featured-content {
+            padding: 20px;
+        }
+
+        .featured-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #1f2937;
+            margin-bottom: 8px;
+        }
+
+        .featured-desc {
+            color: #6b7280;
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+        }
+
+        .featured-btn {
+            padding: 10px 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 25px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .featured-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        /* App Download Section */
+        .app-section {
+            padding: 80px 30px;
+            background: linear-gradient(135deg, #1f2937 0%, #374151 100%);
+            color: white;
+        }
+
+        .app-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 50px;
+        }
+
+        .app-content {
+            flex: 1;
+        }
+
+        .app-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .app-desc {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 30px;
+        }
+
+        .app-buttons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .app-btn {
+            padding: 15px 30px;
+            background: white;
+            color: #1f2937;
+            border: none;
+            border-radius: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .app-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        .app-btn i {
+            font-size: 1.5rem;
+        }
+
+        .app-btn-text {
+            text-align: left;
+        }
+
+        .app-btn-text small {
+            font-size: 0.7rem;
+            opacity: 0.7;
+        }
+
+        .app-btn-text span {
+            display: block;
+        }
+
+        .app-image {
+            flex: 1;
+            text-align: center;
+        }
+
+        .app-mockup {
+            width: 280px;
+            height: 500px;
+            background: white;
+            border-radius: 30px;
+            border: 8px solid #374151;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #1f2937;
+            font-size: 1.2rem;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+        }
+
+        /* Footer */
+        .footer {
+            background: #1f2937;
+            color: white;
+            padding: 60px 30px 30px;
+        }
+
+        .footer-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-brand .logo-text {
+            color: white;
+            margin-bottom: 15px;
+        }
+
+        .footer-brand p {
+            color: #9ca3af;
+            line-height: 1.6;
+        }
+
+        .footer-links h4 {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .footer-links ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: #9ca3af;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #374151;
+            padding-top: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-bottom p {
+            color: #9ca3af;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #374151;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background: #667eea;
+            transform: translateY(-3px);
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .app-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .app-buttons {
+                justify-content: center;
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-container {
+                padding: 10px 15px;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .hero-title {
+                font-size: 1.8rem;
+            }
+            
+            .hero-search {
+                flex-direction: column;
+                border-radius: 20px;
+            }
+            
+            .hero-search input {
+                border-radius: 20px 20px 0 0;
+            }
+            
+            .hero-search button {
+                border-radius: 0 0 20px 20px;
+            }
+            
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-bottom {
+                flex-direction: column;
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <div class="logo-section">
+                <img src="assets/logo.png" alt="Avento" class="logo-img">
+                <span class="logo-text">Avento</span>
+            </div>
+
+            <div class="location-header" onclick="changeLocation()">
+                <i class="fas fa-map-marker-alt"></i>
+                <span id="userLocation">Delhi, India</span>
+                <i class="fas fa-chevron-down" style="font-size: 0.8rem;"></i>
+            </div>
+
+            <nav class="nav-links">
+                <a href="#" class="nav-link">Home</a>
+                <a href="#" class="nav-link">Services</a>
+                <a href="#" class="nav-link">About</a>
+                <a href="#" class="nav-link">Contact</a>
+            </nav>
+
+            <div class="header-actions">
+                <button class="search-icon-btn">
+                    <i class="fas fa-search"></i>
+                </button>
+                <button class="become-pro-btn">Become a Pro</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <h1 class="hero-title">Home services at your doorstep</h1>
+            <p class="hero-subtitle">Expert professionals for all your home needs</p>
+            <div class="hero-search">
+                <input type="text" placeholder="What service are you looking for today?">
+                <button>Search</button>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section class="services-section">
+            <div class="section-header">
+                <h2 class="section-title">Popular Services</h2>
+                <a href="#" class="see-all-link">
+                    See All <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon bg-purple">
+                        <i class="fas fa-screwdriver"></i>
+                    </div>
+                    <h3 class="service-name">AC Repair</h3>
+                    <p class="service-count">500+ Experts</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon bg-green">
+                        <i class="fas fa-broom"></i>
+                    </div>
+                    <h3 class="service-name">Cleaning</h3>
+                    <p class="service-count">1200+ Experts</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon bg-orange">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3 class="service-name">Plumbing</h3>
+                    <p class="service-count">800+ Experts</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon bg-blue">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3 class="service-name">Electrician</h3>
+                    <p class="service-count">650+ Experts</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon bg-pink">
+                        <i class="fas fa-couch"></i>
+                    </div>
+                    <h3 class="service-name">Furniture</h3>
+                    <p class="service-count">300+ Experts</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon bg-teal">
+                        <i class="fas fa-paint-roller"></i>
+                    </div>
+                    <h3 class="service-name">Painting</h3>
+                    <p class="service-count">450+ Experts</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon bg-red">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="service-name">Security</h3>
+                    <p class="service-count">200+ Experts</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon bg-yellow">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3 class="service-name">Pest Control</h3>
+                    <p class="service-count">350+ Experts</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Section -->
+        <section class="featured-section">
+            <div class="featured-container">
+                <div class="section-header">
+                    <h2 class="section-title">Featured Services</h2>
+                </div>
+                <div class="featured-grid">
+                    <div class="featured-card">
+                        <div class="featured-image">
+                            <i class="fas fa-spa"></i>
+                        </div>
+                        <div class="featured-content">
+                            <h3 class="featured-title">Spa at Home</h3>
+                            <p class="featured-desc">Relax and rejuvenate with our professional spa services at your doorstep</p>
+                            <button class="featured-btn">Book Now</button>
+                        </div>
+                    </div>
+                    <div class="featured-card">
+                        <div class="featured-image">
+                            <i class="fas fa-laptop-house"></i>
+                        </div>
+                        <div class="featured-content">
+                            <h3 class="featured-title">Appliance Repair</h3>
+                            <p class="featured-desc">Expert repair for all your home appliances with warranty</p>
+                            <button class="featured-btn">Book Now</button>
+                        </div>
+                    </div>
+                    <div class="featured-card">
+                        <div class="featured-image">
+                            <i class="fas fa-baby"></i>
+                        </div>
+                        <div class="featured-content">
+                            <h3 class="featured-title">Baby Care</h3>
+                            <p class="featured-desc">Trusted babysitters and nannies for your little ones</p>
+                            <button class="featured-btn">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- App Download Section -->
+        <section class="app-section">
+            <div class="app-container">
+                <div class="app-content">
+                    <h2 class="app-title">Download the Avento App</h2>
+                    <p class="app-desc">Get the best home services experience on your mobile device</p>
+                    <div class="app-buttons">
+                        <button class="app-btn">
+                            <i class="fab fa-apple"></i>
+                            <div class="app-btn-text">
+                                <small>Download on the</small>
+                                <span>App Store</span>
+                            </div>
+                        </button>
+                        <button class="app-btn">
+                            <i class="fab fa-google-play"></i>
+                            <div class="app-btn-text">
+                                <small>Get it on</small>
+                                <span>Google Play</span>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+                <div class="app-image">
+                    <div class="app-mockup">
+                        Avento App
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="logo-section">
+                        <img src="assets/logo.png" alt="Avento" class="logo-img">
+                        <span class="logo-text">Avento</span>
+                    </div>
+                    <p>Your trusted partner for all home services. We connect you with verified professionals for quality service at your doorstep.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#">AC Repair</a></li>
+                        <li><a href="#">Home Cleaning</a></li>
+                        <li><a href="#">Plumbing</a></li>
+                        <li><a href="#">Electrical</a></li>
+                        <li><a href="#">Appliance Repair</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Safety</a></li>
+                        <li><a href="#">Community</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">FAQs</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Avento. All rights reserved.</p>
+                <div class="social-links">
+                    <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Store location from previous session
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedLocation = localStorage.getItem('userLocation');
+            if (savedLocation) {
+                document.getElementById('userLocation').textContent = savedLocation;
+            }
+        });
+
+        // Change location function
+        function changeLocation() {
+            const newLocation = prompt('Enter your location:', document.getElementById('userLocation').textContent);
+            if (newLocation && newLocation.trim()) {
+                document.getElementById('userLocation').textContent = newLocation.trim();
+                localStorage.setItem('userLocation', newLocation.trim());
+            }
+        }
+
+        // Search functionality
+        document.querySelector('.hero-search button').addEventListener('click', function() {
+            const searchQuery = document.querySelector('.hero-search input').value;
+            if (searchQuery.trim()) {
+                alert('Searching for: ' + searchQuery);
+            }
+        });
+
+        // Service card click
+        document.querySelectorAll('.service-card').forEach(card => {
+            card.addEventListener('click', function() {
+                const serviceName = this.querySelector('.service-name').textContent;
+                alert('Booking: ' + serviceName);
+            });
+        });
+
+        // Featured card click
+        document.querySelectorAll('.featured-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const serviceName = this.parentElement.querySelector('.featured-title').textContent;
+                alert('Booking: ' + serviceName);
+            });
+        });
+    </script>
+</body>
+</html>
