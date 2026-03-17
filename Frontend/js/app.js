@@ -247,6 +247,10 @@ function verifyOTP() {
     // Simulate verification delay
     setTimeout(() => {
         if (otp === generatedOTP) {
+            // Save phone number to localStorage
+            const phone = document.getElementById("phone").value;
+            localStorage.setItem('userPhone', phone);
+            
             hideButtonLoading("verifyBtn");
             document.getElementById("loginBox").style.display = "none";
             document.getElementById("mapSection").classList.remove("hidden");
@@ -442,6 +446,15 @@ function searchLocation() {
 function confirmAndContinue() {
     // Save location to localStorage
     localStorage.setItem('userLocation', currentLocation);
+    
+    // Generate a random user name if not exists
+    if (!localStorage.getItem('userName')) {
+        const firstNames = ['Alex', 'Jordan', 'Taylor', 'Morgan', 'Casey', 'Riley', 'Avery', 'Quinn'];
+        const lastNames = ['Smith', 'Johnson', 'Williams', 'Brown', 'Jones', 'Garcia', 'Miller', 'Davis'];
+        const randomFirst = firstNames[Math.floor(Math.random() * firstNames.length)];
+        const randomLast = lastNames[Math.floor(Math.random() * lastNames.length)];
+        localStorage.setItem('userName', randomFirst + ' ' + randomLast);
+    }
     
     // Show success message
     alert(`Location confirmed: ${currentLocation}. Redirecting to home page...`);

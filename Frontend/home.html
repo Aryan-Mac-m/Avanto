@@ -4,169 +4,428 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Avento - Home</title>
-    <link rel="stylesheet" href="css/global.css">
+<link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/respsive.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* Header Styles */
-        .header {
+        /* Homepage Enhancement Styles */
+        .service-image {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+            border-radius: 12px 12px 0 0;
+            margin-bottom: 15px;
+        }
+
+        .service-price {
+            background: linear-gradient(135deg, #10b981, #059669);
+            color: white;
+            padding: 8px 12px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            margin-bottom: 8px;
+            display: inline-block;
+        }
+
+        .service-rating {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            color: #f59e0b;
+            font-size: 0.9rem;
+            margin-bottom Asc : Asc Asc Asc 12px;
+        }
+
+        .service-card.enhanced {
+            padding: Asc 20px;
+        }
+
+        /* Featured Section */
+        .featured-section {
+            padding: Asc 60px Asc Asc Asc Asc Asc 30px;
+            max-width: 1400px;
+            Asc margin: Asc 0 Asc auto;
+        }
+
+        .featured-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .featured-card {
             background: white;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            border-radius: 20px;
+            overflow: hidden;
+            Asc box-shadow: Asc 0 Asc 8px Asc Asc Asc Asc 25px Asc rgba Asc (0,0,0,0.08);
+            transition: all 0.4s ease;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .featured-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+        }
+
+        .featured-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .featured-content {
+            padding: Asc Asc Asc Asc  Asc Asc Asc Asc 25px;
+        }
+
+        .featured-price {
+            background: linear-gradient( Asc 135deg, Asc #10b981, Asc Asc #059669);
+            color: white;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            margin-bottom: 10px;
+            display: inline-block;
+        }
+
+        .featured-rating {
+            Asc Asc display: Asc flex;
+            align-items: center;
+            gap: 4px;
+            color: #f59e0b;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+        .featured-features {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 20px 0;
+        }
+
+        .featured-features li {
+            display: flex;
+            align-items: Asc center;
+            gap: 8px;
+            color: #6b7280;
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+        }
+
+        .featured-features li i {
+            color: #10b981;
+            font-size: 0.8rem;
+            width: 16px;
+        }
+
+        /* Professionals Section */
+        .professionals-section {
+            padding: 60px 30px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .professionals-grid {
+            Asc Asc display: Asc grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 25px;
+        }
+
+        /* Why Choose Us */
+        .why-section {
+            padding: 60px 30px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .why-card {
+            text-align: center;
+            padding: 30px 20px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+        }
+
+        .why-card:hover Asc {
+            transform: translate Asc Y(-8px);
+            box-shadow: 0 Asc Asc Asc Asc Asc Asc 20px Asc 40px rgba Asc (0,0,0,0.12);
+        }
+
+        .why-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            margin: 0 auto 20px;
+            color: white;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .why-card:hover .why-icon {
+            transform: scale(1.1);
+        }
+
+        .why-icon.fast {
+            background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+        }
+
+        .why Asc - Asc icon.verified {
+            background: linear-gradient(135deg, #10b981, #059669);
+        }
+
+        .why-icon.affordable {
+            background: linear-gradient(135deg, #f59e0b, #d97706);
+        }
+
+        .why-icon.support {
+            background: linear-gradient(135deg, #ec4899, #be185d);
+        }
+
+        .why-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #1e3a5f;
+            margin-bottom: 12px;
+        }
+
+        .why-desc {
+            color: #6b7280;
+            line-height: 1.6;
+        }
+
+        .stars {
+            color: #fbbf24;
+        }
+    </style>
+    <style>
+        /* ====== NAVIGATION BAR STYLES ====== */
+        .navbar {
             position: fixed;
             top: 0;
             left: 0;
             right: 0;
-            z-index: 1000;
-        }
-
-        .header-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 15px 30px;
+            height: 70px;
+            background: linear-gradient(135deg, #1e3a5f 0%, #2d5a87 100%);
             display: flex;
+            align-items: center;
             justify-content: space-between;
-            align-items: center;
+            padding: 0 50px;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
         }
 
-        .logo-section {
+        .navbar-logo {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
+            cursor: pointer;
         }
 
-        .logo-img {
-            width: 50px;
-            height: 50px;
+        .navbar-logo img {
+            width: 45px;
+            height: 45px;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
         }
 
-        .logo-text {
-            font-size: 1.5rem;
+        .navbar-logo span {
+            font-size: 1.6rem;
             font-weight: 700;
-            color: #1f2937;
+            color: white;
+            letter-spacing: 0.5px;
         }
 
-        .location-header {
+        .navbar-menu {
             display: flex;
             align-items: center;
             gap: 8px;
-            padding: 8px 16px;
-            background: #f3f4f6;
+        }
+
+        .nav-item {
+            padding: 12px 24px;
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .nav-item:hover {
+            color: white;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .nav-item.active {
+            color: white;
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .nav-item.active::after {
+            content: '';
+            position: absolute;
+            bottom: 6px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 20px;
+            height: 3px;
+            background: #4fd1c5;
+            border-radius: 2px;
+        }
+
+        .navbar-location {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 18px;
+            background: rgba(255, 255, 255, 0.1);
             border-radius: 25px;
             cursor: pointer;
             transition: all 0.3s ease;
         }
 
-        .location-header:hover {
-            background: #e5e7eb;
+        .navbar-location:hover {
+            background: rgba(255, 255, 255, 0.15);
         }
 
-        .location-header i {
-            color: #667eea;
+        .navbar-location i {
+            color: #4fd1c5;
+            font-size: 1rem;
         }
 
-        .location-header span {
-            color: #374151;
+        .navbar-location span {
+            color: white;
+            font-size: 0.9rem;
             font-weight: 500;
+            max-width: 150px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
         }
 
-        .nav-links {
-            display: flex;
-            align-items: center;
-            gap: 25px;
+        .navbar-location .chevron {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.75rem;
         }
 
-        .nav-link {
-            color: #4b5563;
-            text-decoration: none;
-            font-weight: 500;
-            padding: 8px 0;
-            position: relative;
-            transition: color 0.3s ease;
-        }
-
-        .nav-link:hover {
-            color: #667eea;
-        }
-
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: #667eea;
-            transition: width 0.3s ease;
-        }
-
-        .nav-link:hover::after {
-            width: 100%;
-        }
-
-        .header-actions {
+        .navbar-user {
             display: flex;
             align-items: center;
             gap: 15px;
         }
 
-        .search-icon-btn {
-            width: 45px;
-            height: 45px;
+        .nav-icon-btn {
+            width: 42px;
+            height: 42px;
             border-radius: 50%;
             border: none;
-            background: #f3f4f6;
-            color: #4b5563;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
             cursor: pointer;
             transition: all 0.3s ease;
             display: flex;
             align-items: center;
             justify-content: center;
+            font-size: 1.1rem;
         }
 
-        .search-icon-btn:hover {
-            background: #e5e7eb;
-            color: #667eea;
+        .nav-icon-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: scale(1.05);
         }
 
-        .become-pro-btn {
-            padding: 12px 24px;
-            background: #1f2937;
-            color: white;
-            border: none;
-            border-radius: 25px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
+        /* ====== MAIN CONTENT AREA ====== */
+        .main-container {
+            margin-top: 70px;
+            min-height: calc(100vh - 70px);
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8ec 100%);
         }
 
-        .become-pro-btn:hover {
-            background: #374151;
-            transform: translateY(-2px);
+        /* ====== SECTION TRANSITIONS ====== */
+        .section {
+            display: none;
+            animation: fadeInSection 0.4s ease;
         }
 
-        /* Main Content */
-        .main-content {
-            margin-top: 80px;
+        .section.active {
+            display: block;
+        }
+
+        @keyframes fadeInSection {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ====== HOME SECTION ====== */
+        #homeSection {
             padding: 0;
         }
 
         /* Hero Section */
         .hero-section {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            padding: 80px 30px;
+            background: linear-gradient(135deg, #1e3a5f 0%, #2d5a87 50%, #3d7ab5 100%);
+            padding: 60px 30px;
             text-align: center;
             color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 60%);
+            animation: heroGlow 15s ease-in-out infinite;
+        }
+
+        @keyframes heroGlow {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
         }
 
         .hero-title {
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             font-weight: 700;
             margin-bottom: 15px;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
         }
 
         .hero-subtitle {
-            font-size: 1.2rem;
+            font-size: 1.25rem;
             opacity: 0.9;
-            margin-bottom: 30px;
+            margin-bottom: 35px;
         }
 
         .hero-search {
@@ -176,35 +435,40 @@
             background: white;
             border-radius: 50px;
             overflow: hidden;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
         }
 
         .hero-search input {
             flex: 1;
             padding: 20px 30px;
             border: none;
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             outline: none;
+            color: #333;
+        }
+
+        .hero-search input::placeholder {
+            color: #999;
         }
 
         .hero-search button {
             padding: 20px 40px;
-            background: #667eea;
+            background: linear-gradient(135deg, #4fd1c5 0%, #38b2ac 100%);
             color: white;
             border: none;
             font-size: 1rem;
             font-weight: 600;
             cursor: pointer;
-            transition: background 0.3s ease;
+            transition: all 0.3s ease;
         }
 
         .hero-search button:hover {
-            background: #5a6fd6;
+            background: linear-gradient(135deg, #38b2ac 0%, #2c9a94 100%);
         }
 
-        /* Services Section */
-        .services-section {
-            padding: 60px 30px;
+        /* Services Section (Home) */
+        .services-home-section {
+            padding: 50px 30px;
             max-width: 1400px;
             margin: 0 auto;
         }
@@ -219,21 +483,23 @@
         .section-title {
             font-size: 1.8rem;
             font-weight: 700;
-            color: #1f2937;
+            color: #1e3a5f;
         }
 
         .see-all-link {
-            color: #667eea;
+            color: #2d5a87;
             text-decoration: none;
             font-weight: 600;
             display: flex;
             align-items: center;
             gap: 5px;
             transition: gap 0.3s ease;
+            cursor: pointer;
         }
 
         .see-all-link:hover {
             gap: 10px;
+            color: #4fd1c5;
         }
 
         .services-grid {
@@ -245,18 +511,18 @@
         .service-card {
             background: white;
             border-radius: 16px;
-            padding: 20px;
+            padding: 25px 20px;
             text-align: center;
             cursor: pointer;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
             border: 2px solid transparent;
         }
 
         .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            border-color: #667eea;
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+            border-color: #4fd1c5;
         }
 
         .service-icon {
@@ -266,14 +532,20 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 15px;
+            margin: 0 auto 18px;
             font-size: 1.8rem;
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover .service-icon {
+            transform: scale(1.1);
         }
 
         .service-name {
             font-weight: 600;
-            color: #1f2937;
+            color: #1e3a5f;
             margin-bottom: 5px;
+            font-size: 1.05rem;
         }
 
         .service-count {
@@ -287,301 +559,399 @@
         .bg-orange { background: rgba(249, 115, 22, 0.15); color: #f97316; }
         .bg-blue { background: rgba(59, 130, 246, 0.15); color: #3b82f6; }
         .bg-pink { background: rgba(236, 72, 153, 0.15); color: #ec4899; }
-        .bg-teal { background: rgba(20, 184, 166, 0.15); color: #14b8a6; }
+        .bg-teal { background: rgba(79, 209, 197, 0.15); color: #4fd1c5; }
         .bg-red { background: rgba(239, 68, 68, 0.15); color: #ef4444; }
         .bg-yellow { background: rgba(234, 179, 8, 0.15); color: #eab308; }
 
-        /* Featured Section */
-        .featured-section {
-            background: #f9fafb;
-            padding: 60px 30px;
+        /* ====== SERVICES VIEW SECTION ====== */
+        #servicesSection {
+            padding: 40px 50px;
         }
 
-        .featured-container {
-            max-width: 1400px;
+        .services-view-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .services-view-header h2 {
+            font-size: 2.2rem;
+            color: #1e3a5f;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .services-view-header p {
+            color: #6b7280;
+            font-size: 1.1rem;
+        }
+
+        .services-view-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            max-width: 1000px;
             margin: 0 auto;
         }
 
-        .featured-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 25px;
-        }
-
-        .featured-card {
+        .service-view-card {
             background: white;
-            border-radius: 16px;
+            border-radius: 20px;
+            padding: 35px;
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+            border: 2px solid transparent;
+            position: relative;
             overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            transition: all 0.3s ease;
         }
 
-        .featured-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
-
-        .featured-image {
+        .service-view-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
-            height: 160px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            height: 100%;
+            background: linear-gradient(135deg, rgba(79, 209, 197, 0.05) 0%, rgba(45, 90, 135, 0.05) 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .service-view-card:hover::before {
+            opacity: 1;
+        }
+
+        .service-view-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+            border-color: #4fd1c5;
+        }
+
+        .service-view-icon {
+            width: 90px;
+            height: 90px;
+            border-radius: 20px;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: white;
-            font-size: 3rem;
+            font-size: 2.5rem;
+            flex-shrink: 0;
+            transition: transform 0.3s ease;
         }
 
-        .featured-content {
-            padding: 20px;
+        .service-view-card:hover .service-view-icon {
+            transform: scale(1.1) rotate(5deg);
         }
 
-        .featured-title {
-            font-size: 1.2rem;
+        .service-view-content {
+            flex: 1;
+        }
+
+        .service-view-title {
+            font-size: 1.4rem;
             font-weight: 700;
-            color: #1f2937;
+            color: #1e3a5f;
             margin-bottom: 8px;
         }
 
-        .featured-desc {
+        .service-view-desc {
             color: #6b7280;
             font-size: 0.95rem;
-            margin-bottom: 15px;
+            line-height: 1.5;
+            margin-bottom: 18px;
         }
 
-        .featured-btn {
+        .service-view-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
             padding: 10px 20px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #1e3a5f 0%, #2d5a87 100%);
             color: white;
             border: none;
             border-radius: 25px;
             font-weight: 600;
+            font-size: 0.9rem;
             cursor: pointer;
             transition: all 0.3s ease;
         }
 
-        .featured-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+        .service-view-btn:hover {
+            background: linear-gradient(135deg, #2d5a87 0%, #3d7ab5 100%);
+            gap: 12px;
         }
 
-        /* App Download Section */
-        .app-section {
-            padding: 80px 30px;
-            background: linear-gradient(135deg, #1f2937 0%, #374151 100%);
-            color: white;
+        /* ====== PROFILE VIEW SECTION ====== */
+        #profileSection {
+            padding: 40px 50px;
         }
 
-        .app-container {
-            max-width: 1200px;
+        .profile-container {
+            max-width: 800px;
             margin: 0 auto;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 50px;
         }
 
-        .app-content {
-            flex: 1;
-        }
-
-        .app-title {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 20px;
-        }
-
-        .app-desc {
-            font-size: 1.2rem;
-            opacity: 0.9;
-            margin-bottom: 30px;
-        }
-
-        .app-buttons {
-            display: flex;
-            gap: 15px;
-        }
-
-        .app-btn {
-            padding: 15px 30px;
-            background: white;
-            color: #1f2937;
-            border: none;
-            border-radius: 12px;
-            font-weight: 600;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            transition: all 0.3s ease;
-        }
-
-        .app-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-        }
-
-        .app-btn i {
-            font-size: 1.5rem;
-        }
-
-        .app-btn-text {
-            text-align: left;
-        }
-
-        .app-btn-text small {
-            font-size: 0.7rem;
-            opacity: 0.7;
-        }
-
-        .app-btn-text span {
-            display: block;
-        }
-
-        .app-image {
-            flex: 1;
+        .profile-header {
             text-align: center;
+            margin-bottom: 40px;
         }
 
-        .app-mockup {
-            width: 280px;
-            height: 500px;
+        .profile-header h2 {
+            font-size: 2rem;
+            color: #1e3a5f;
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+
+        .profile-header p {
+            color: #6b7280;
+            font-size: 1rem;
+        }
+
+        .profile-card {
             background: white;
-            border-radius: 30px;
-            border: 8px solid #374151;
+            border-radius: 24px;
+            padding: 40px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .profile-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 120px;
+            background: linear-gradient(135deg, #1e3a5f 0%, #2d5a87 100%);
+        }
+
+        .profile-avatar-wrapper {
+            position: relative;
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 20px;
+            z-index: 1;
+        }
+
+        .profile-avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #1f2937;
-            font-size: 1.2rem;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+            font-size: 3rem;
+            color: white;
+            border: 5px solid white;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
         }
 
-        /* Footer */
-        .footer {
-            background: #1f2937;
+        .profile-edit-avatar {
+            position: absolute;
+            bottom: 5px;
+            right: 5px;
+            width: 35px;
+            height: 35px;
+            background: #4fd1c5;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             color: white;
-            padding: 60px 30px 30px;
+            cursor: pointer;
+            border: 3px solid white;
+            transition: all 0.3s ease;
+        }
+
+        .profile-edit-avatar:hover {
+            transform: scale(1.1);
+            background: #38b2ac;
+        }
+
+        .profile-name {
+            text-align: center;
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: #1e3a5f;
+            margin-bottom: 30px;
+        }
+
+        .profile-info-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .profile-info-item {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 20px;
+            background: #f8fafc;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .profile-info-item:hover {
+            background: #f1f5f9;
+            transform: translateX(5px);
+        }
+
+        .profile-info-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+        }
+
+        .profile-info-icon.phone {
+            background: rgba(102, 126, 234, 0.15);
+            color: #667eea;
+        }
+
+        .profile-info-icon.location {
+            background: rgba(79, 209, 197, 0.15);
+            color: #4fd1c5;
+        }
+
+        .profile-info-icon.email {
+            background: rgba(249, 115, 22, 0.15);
+            color: #f97316;
+        }
+
+        .profile-info-content {
+            flex: 1;
+        }
+
+        .profile-info-label {
+            font-size: 0.85rem;
+            color: #6b7280;
+            margin-bottom: 4px;
+        }
+
+        .profile-info-value {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #1e3a5f;
+        }
+
+        .profile-actions {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .profile-btn {
+            flex: 1;
+            padding: 16px 24px;
+            border: none;
+            border-radius: 12px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .profile-btn.edit {
+            background: linear-gradient(135deg, #1e3a5f 0%, #2d5a87 100%);
+            color: white;
+        }
+
+        .profile-btn.edit:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(30, 58, 95, 0.3);
+        }
+
+        .profile-btn.logout {
+            background: white;
+            color: #ef4444;
+            border: 2px solid #ef4444;
+        }
+
+        .profile-btn.logout:hover {
+            background: #fef2f2;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(239, 68, 68, 0.2);
+        }
+
+        /* ====== FOOTER ====== */
+        .footer {
+            background: #1e3a5f;
+            color: white;
+            padding: 40px 30px 25px;
+            margin-top: auto;
         }
 
         .footer-container {
             max-width: 1400px;
             margin: 0 auto;
+            text-align: center;
         }
 
-        .footer-grid {
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr 1fr;
-            gap: 40px;
-            margin-bottom: 40px;
-        }
-
-        .footer-brand .logo-text {
-            color: white;
-            margin-bottom: 15px;
-        }
-
-        .footer-brand p {
-            color: #9ca3af;
-            line-height: 1.6;
-        }
-
-        .footer-links h4 {
-            font-size: 1.1rem;
-            margin-bottom: 20px;
-            color: white;
-        }
-
-        .footer-links ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .footer-links li {
-            margin-bottom: 12px;
-        }
-
-        .footer-links a {
-            color: #9ca3af;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .footer-links a:hover {
-            color: white;
-        }
-
-        .footer-bottom {
-            border-top: 1px solid #374151;
-            padding-top: 30px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .footer-bottom p {
-            color: #9ca3af;
-        }
-
-        .social-links {
-            display: flex;
-            gap: 15px;
-        }
-
-        .social-link {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background: #374151;
+        .footer-logo {
             display: flex;
             align-items: center;
             justify-content: center;
-            color: white;
-            text-decoration: none;
-            transition: all 0.3s ease;
+            gap: 10px;
+            margin-bottom: 15px;
         }
 
-        .social-link:hover {
-            background: #667eea;
-            transform: translateY(-3px);
+        .footer-logo img {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+        }
+
+        .footer-logo span {
+            font-size: 1.4rem;
+            font-weight: 700;
+        }
+
+        .footer-text {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
         }
 
         /* Responsive */
         @media (max-width: 1024px) {
-            .app-container {
-                flex-direction: column;
-                text-align: center;
-            }
-            
-            .app-buttons {
-                justify-content: center;
-            }
-            
-            .footer-grid {
-                grid-template-columns: 1fr 1fr;
+            .services-view-grid {
+                grid-template-columns: 1fr;
             }
         }
 
         @media (max-width: 768px) {
-            .header-container {
-                padding: 10px 15px;
+            .navbar {
+                padding: 0 20px;
             }
             
-            .nav-links {
+            .navbar-menu {
                 display: none;
             }
             
+            .navbar-location span {
+                max-width: 100px;
+            }
+            
             .hero-title {
-                font-size: 1.8rem;
+                font-size: 2rem;
             }
             
             .hero-search {
                 flex-direction: column;
                 border-radius: 20px;
-            }
-            
-            .hero-search input {
-                border-radius: 20px 20px 0 0;
             }
             
             .hero-search button {
@@ -592,197 +962,263 @@
                 grid-template-columns: repeat(2, 1fr);
             }
             
-            .footer-grid {
-                grid-template-columns: 1fr;
+            #servicesSection, #profileSection {
+                padding: 30px 20px;
             }
             
-            .footer-bottom {
+            .profile-actions {
                 flex-direction: column;
-                gap: 20px;
             }
         }
     </style>
 </head>
 <body>
 
-    <!-- Header -->
-    <header class="header">
-        <div class="header-container">
-            <div class="logo-section">
-                <img src="assets/logo.png" alt="Avento" class="logo-img">
-                <span class="logo-text">Avento</span>
-            </div>
-
-            <div class="location-header" onclick="changeLocation()">
-                <i class="fas fa-map-marker-alt"></i>
-                <span id="userLocation">Delhi, India</span>
-                <i class="fas fa-chevron-down" style="font-size: 0.8rem;"></i>
-            </div>
-
-            <nav class="nav-links">
-                <a href="#" class="nav-link">Home</a>
-                <a href="#" class="nav-link">Services</a>
-                <a href="#" class="nav-link">About</a>
-                <a href="#" class="nav-link">Contact</a>
-            </nav>
-
-            <div class="header-actions">
-                <button class="search-icon-btn">
-                    <i class="fas fa-search"></i>
-                </button>
-                <button class="become-pro-btn">Become a Pro</button>
-            </div>
+    <!-- ====== NAVIGATION BAR ====== -->
+    <nav class="navbar">
+        <div class="navbar-logo" onclick="showSection('home')">
+            <img src="assets/logo.png" alt="Avento">
+            <span>Avento</span>
         </div>
-    </header>
 
-    <!-- Main Content -->
-    <main class="main-content">
+        <div class="navbar-menu">
+            <a class="nav-item active" data-section="home" onclick="showSection('home')">
+                <i class="fas fa-home" style="margin-right: 8px;"></i> Home
+            </a>
+            <a class="nav-item" data-section="services" onclick="showSection('services')">
+                <i class="fas fa-cogs" style="margin-right: 8px;"></i> Services
+            </a>
+            <a class="nav-item" data-section="profile" onclick="showSection('profile')">
+                <i class="fas fa-user" style="margin-right: 8px;"></i> Profile
+            </a>
+        </div>
+
+        <div class="navbar-user">
+            <div class="navbar-location" onclick="changeLocation()">
+                <i class="fas fa-map-marker-alt"></i>
+                <span id="userLocation">Loading...</span>
+                <i class="fas fa-chevron-down chevron"></i>
+            </div>
+            <button class="nav-icon-btn" title="Notifications">
+                <i class="fas fa-bell"></i>
+            </button>
+            <button class="nav-icon-btn" onclick="showSection('profile')" title="Profile">
+                <i class="fas fa-user-circle"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ====== MAIN CONTENT ====== -->
+    <main class="main-container">
         
-        <!-- Hero Section -->
-        <section class="hero-section">
-            <h1 class="hero-title">Home services at your doorstep</h1>
-            <p class="hero-subtitle">Expert professionals for all your home needs</p>
-            <div class="hero-search">
-                <input type="text" placeholder="What service are you looking for today?">
-                <button>Search</button>
+        <!-- ====== HOME SECTION ====== -->
+        <section id="homeSection" class="section active">
+            <!-- Hero Section -->
+            <div class="hero-section">
+                <div class="hero-content">
+                    <h1 class="hero-title">Home services at your doorstep</h1>
+                    <p class="hero-subtitle">Expert professionals for all your home needs</p>
+                    <div class="hero-search">
+                        <input type="text" placeholder="What service are you looking for today?">
+                        <button onclick="searchService()">Search</button>
+                    </div>
+                </div>
             </div>
-        </section>
 
-        <!-- Services Section -->
-        <section class="services-section">
-            <div class="section-header">
-                <h2 class="section-title">Popular Services</h2>
-                <a href="#" class="see-all-link">
-                    See All <i class="fas fa-arrow-right"></i>
-                </a>
-            </div>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon bg-purple">
-                        <i class="fas fa-screwdriver"></i>
-                    </div>
-                    <h3 class="service-name">AC Repair</h3>
-                    <p class="service-count">500+ Experts</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon bg-green">
-                        <i class="fas fa-broom"></i>
-                    </div>
-                    <h3 class="service-name">Cleaning</h3>
-                    <p class="service-count">1200+ Experts</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon bg-orange">
-                        <i class="fas fa-tools"></i>
-                    </div>
-                    <h3 class="service-name">Plumbing</h3>
-                    <p class="service-count">800+ Experts</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon bg-blue">
-                        <i class="fas fa-bolt"></i>
-                    </div>
-                    <h3 class="service-name">Electrician</h3>
-                    <p class="service-count">650+ Experts</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon bg-pink">
-                        <i class="fas fa-couch"></i>
-                    </div>
-                    <h3 class="service-name">Furniture</h3>
-                    <p class="service-count">300+ Experts</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon bg-teal">
-                        <i class="fas fa-paint-roller"></i>
-                    </div>
-                    <h3 class="service-name">Painting</h3>
-                    <p class="service-count">450+ Experts</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon bg-red">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                    <h3 class="service-name">Security</h3>
-                    <p class="service-count">200+ Experts</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon bg-yellow">
-                        <i class="fas fa-leaf"></i>
-                    </div>
-                    <h3 class="service-name">Pest Control</h3>
-                    <p class="service-count">350+ Experts</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Featured Section -->
-        <section class="featured-section">
-            <div class="featured-container">
+            <!-- Services Section -->
+            <div class="services-home-section">
                 <div class="section-header">
-                    <h2 class="section-title">Featured Services</h2>
+                    <h2 class="section-title">Popular Services</h2>
+                    <a class="see-all-link" onclick="showSection('services')">
+                        See All <i class="fas fa-arrow-right"></i>
+                    </a>
                 </div>
-                <div class="featured-grid">
-                    <div class="featured-card">
-                        <div class="featured-image">
-                            <i class="fas fa-spa"></i>
+                <div class="services-grid">
+                    <div class="service-card" onclick="bookService('AC Repair')">
+                        <div class="service-icon bg-purple">
+                            <i class="fas fa-snowflake"></i>
                         </div>
-                        <div class="featured-content">
-                            <h3 class="featured-title">Spa at Home</h3>
-                            <p class="featured-desc">Relax and rejuvenate with our professional spa services at your doorstep</p>
-                            <button class="featured-btn">Book Now</button>
-                        </div>
+                        <h3 class="service-name">AC Repair</h3>
+                        <p class="service-count">500+ Experts</p>
                     </div>
-                    <div class="featured-card">
-                        <div class="featured-image">
-                            <i class="fas fa-laptop-house"></i>
+                    <div class="service-card" onclick="bookService('Cleaning')">
+                        <div class="service-icon bg-green">
+                            <i class="fas fa-broom"></i>
                         </div>
-                        <div class="featured-content">
-                            <h3 class="featured-title">Appliance Repair</h3>
-                            <p class="featured-desc">Expert repair for all your home appliances with warranty</p>
-                            <button class="featured-btn">Book Now</button>
-                        </div>
+                        <h3 class="service-name">Cleaning</h3>
+                        <p class="service-count">1200+ Experts</p>
                     </div>
-                    <div class="featured-card">
-                        <div class="featured-image">
-                            <i class="fas fa-baby"></i>
+                    <div class="service-card" onclick="bookService('Plumbing')">
+                        <div class="service-icon bg-orange">
+                            <i class="fas fa-wrench"></i>
                         </div>
-                        <div class="featured-content">
-                            <h3 class="featured-title">Baby Care</h3>
-                            <p class="featured-desc">Trusted babysitters and nannies for your little ones</p>
-                            <button class="featured-btn">Book Now</button>
+                        <h3 class="service-name">Plumbing</h3>
+                        <p class="service-count">800+ Experts</p>
+                    </div>
+                    <div class="service-card" onclick="bookService('Electrician')">
+                        <div class="service-icon bg-blue">
+                            <i class="fas fa-bolt"></i>
                         </div>
+                        <h3 class="service-name">Electrician</h3>
+                        <p class="service-count">650+ Experts</p>
+                    </div>
+                    <div class="service-card" onclick="bookService('Furniture')">
+                        <div class="service-icon bg-pink">
+                            <i class="fas fa-couch"></i>
+                        </div>
+                        <h3 class="service-name">Furniture</h3>
+                        <p class="service-count">300+ Experts</p>
+                    </div>
+                    <div class="service-card" onclick="bookService('Painting')">
+                        <div class="service-icon bg-teal">
+                            <i class="fas fa-paint-roller"></i>
+                        </div>
+                        <h3 class="service-name">Painting</h3>
+                        <p class="service-count">450+ Experts</p>
+                    </div>
+                    <div class="service-card" onclick="bookService('Security')">
+                        <div class="service-icon bg-red">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3 class="service-name">Security</h3>
+                        <p class="service-count">200+ Experts</p>
+                    </div>
+                    <div class="service-card" onclick="bookService('Pest Control')">
+                        <div class="service-icon bg-yellow">
+                            <i class="fas fa-bug"></i>
+                        </div>
+                        <h3 class="service-name">Pest Control</h3>
+                        <p class="service-count">350+ Experts</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- App Download Section -->
-        <section class="app-section">
-            <div class="app-container">
-                <div class="app-content">
-                    <h2 class="app-title">Download the Avento App</h2>
-                    <p class="app-desc">Get the best home services experience on your mobile device</p>
-                    <div class="app-buttons">
-                        <button class="app-btn">
-                            <i class="fab fa-apple"></i>
-                            <div class="app-btn-text">
-                                <small>Download on the</small>
-                                <span>App Store</span>
-                            </div>
-                        </button>
-                        <button class="app-btn">
-                            <i class="fab fa-google-play"></i>
-                            <div class="app-btn-text">
-                                <small>Get it on</small>
-                                <span>Google Play</span>
-                            </div>
+        <!-- ====== SERVICES VIEW SECTION ====== -->
+        <section id="servicesSection" class="section">
+            <div class="services-view-header">
+                <h2>Our Services</h2>
+                <p>Choose from a wide range of services tailored for you</p>
+            </div>
+            
+            <div class="services-view-grid">
+                <!-- Ride Booking -->
+                <div class="service-view-card" onclick="bookService('Ride Booking')">
+                    <div class="service-view-icon bg-purple">
+                        <i class="fas fa-car"></i>
+                    </div>
+                    <div class="service-view-content">
+                        <h3 class="service-view-title">Ride Booking</h3>
+                        <p class="service-view-desc">Book comfortable rides for your daily commute or special occasions. Safe, reliable, and on-time pickups.</p>
+                        <button class="service-view-btn">
+                            Book Now <i class="fas fa-arrow-right"></i>
                         </button>
                     </div>
                 </div>
-                <div class="app-image">
-                    <div class="app-mockup">
-                        Avento App
+
+                <!-- Food Delivery -->
+                <div class="service-view-card" onclick="bookService('Food Delivery')">
+                    <div class="service-view-icon bg-orange">
+                        <i class="fas fa-hamburger"></i>
+                    </div>
+                    <div class="service-view-content">
+                        <h3 class="service-view-title">Food Delivery</h3>
+                        <p class="service-view-desc">Get your favorite meals delivered fresh from restaurants to your doorstep. Fast and hot delivery.</p>
+                        <button class="service-view-btn">
+                            Order Now <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Parcel Delivery -->
+                <div class="service-view-card" onclick="bookService('Parcel Delivery')">
+                    <div class="service-view-icon bg-blue">
+                        <i class="fas fa-box"></i>
+                    </div>
+                    <div class="service-view-content">
+                        <h3 class="service-view-title">Parcel Delivery</h3>
+                        <p class="service-view-desc">Send packages anywhere with real-time tracking. Secure and affordable delivery services.</p>
+                        <button class="service-view-btn">
+                            Send Parcel <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Nearby Stores -->
+                <div class="service-view-card" onclick="bookService('Nearby Stores')">
+                    <div class="service-view-icon bg-green">
+                        <i class="fas fa-store"></i>
+                    </div>
+                    <div class="service-view-content">
+                        <h3 class="service-view-title">Nearby Stores</h3>
+                        <p class="service-view-desc">Discover stores near you. Browse products, compare prices, and shop locally with ease.</p>
+                        <button class="service-view-btn">
+                            Explore <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ====== PROFILE VIEW SECTION ====== -->
+        <section id="profileSection" class="section">
+            <div class="profile-container">
+                <div class="profile-header">
+                    <h2>Your Profile</h2>
+                    <p>Manage your account information</p>
+                </div>
+                
+                <div class="profile-card">
+                    <div class="profile-avatar-wrapper">
+                        <div class="profile-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="profile-edit-avatar" onclick="editProfile()">
+                            <i class="fas fa-camera"></i>
+                        </div>
+                    </div>
+                    
+                    <h3 class="profile-name" id="profileName">Avento User</h3>
+                    
+                    <div class="profile-info-list">
+                        <div class="profile-info-item">
+                            <div class="profile-info-icon phone">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="profile-info-content">
+                                <div class="profile-info-label">Phone Number</div>
+                                <div class="profile-info-value" id="profilePhone">+91 ---------</div>
+                            </div>
+                        </div>
+                        
+                        <div class="profile-info-item">
+                            <div class="profile-info-icon location">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="profile-info-content">
+                                <div class="profile-info-label">Selected Location</div>
+                                <div class="profile-info-value" id="profileLocation">Not set</div>
+                            </div>
+                        </div>
+                        
+                        <div class="profile-info-item">
+                            <div class="profile-info-icon email">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="profile-info-content">
+                                <div class="profile-info-label">Email</div>
+                                <div class="profile-info-value" id="profileEmail">Not provided</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="profile-actions">
+                        <button class="profile-btn edit" onclick="editProfile()">
+                            <i class="fas fa-edit"></i> Edit Profile
+                        </button>
+                        <button class="profile-btn logout" onclick="logout()">
+                            <i class="fas fa-sign-out-alt"></i> Logout
+                        </button>
                     </div>
                 </div>
             </div>
@@ -790,101 +1226,129 @@
 
     </main>
 
-    <!-- Footer -->
+    <!-- ====== FOOTER ====== -->
     <footer class="footer">
         <div class="footer-container">
-            <div class="footer-grid">
-                <div class="footer-brand">
-                    <div class="logo-section">
-                        <img src="assets/logo.png" alt="Avento" class="logo-img">
-                        <span class="logo-text">Avento</span>
-                    </div>
-                    <p>Your trusted partner for all home services. We connect you with verified professionals for quality service at your doorstep.</p>
-                </div>
-                <div class="footer-links">
-                    <h4>Services</h4>
-                    <ul>
-                        <li><a href="#">AC Repair</a></li>
-                        <li><a href="#">Home Cleaning</a></li>
-                        <li><a href="#">Plumbing</a></li>
-                        <li><a href="#">Electrical</a></li>
-                        <li><a href="#">Appliance Repair</a></li>
-                    </ul>
-                </div>
-                <div class="footer-links">
-                    <h4>Company</h4>
-                    <ul>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Careers</a></li>
-                        <li><a href="#">Terms & Conditions</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-links">
-                    <h4>Support</h4>
-                    <ul>
-                        <li><a href="#">Help Center</a></li>
-                        <li><a href="#">Safety</a></li>
-                        <li><a href="#">Community</a></li>
-                        <li><a href="#">Blog</a></li>
-                        <li><a href="#">FAQs</a></li>
-                    </ul>
-                </div>
+            <div class="footer-logo">
+                <img src="assets/logo.png" alt="Avento">
+                <span>Avento</span>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 Avento. All rights reserved.</p>
-                <div class="social-links">
-                    <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                    <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-                    <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
-                </div>
-            </div>
+            <p class="footer-text">&copy; 2024 Avento. All rights reserved.</p>
         </div>
     </footer>
 
+    <!-- ====== JAVASCRIPT ====== -->
+    <script src="js/app.js"></script>
     <script>
-        // Store location from previous session
+        // Initialize page on load
         document.addEventListener('DOMContentLoaded', function() {
+            loadUserData();
+        });
+
+        // Load user data from localStorage
+        function loadUserData() {
+            // Load user name
+            const savedName = localStorage.getItem('userName');
+            if (savedName) {
+                document.getElementById('profileName').textContent = savedName;
+            } else {
+                document.getElementById('profileName').textContent = 'Avento User';
+            }
+
+            // Load location
             const savedLocation = localStorage.getItem('userLocation');
             if (savedLocation) {
                 document.getElementById('userLocation').textContent = savedLocation;
+                document.getElementById('profileLocation').textContent = savedLocation;
+            } else {
+                document.getElementById('userLocation').textContent = 'Set Location';
+                document.getElementById('profileLocation').textContent = 'Not set';
             }
-        });
 
-        // Change location function
-        function changeLocation() {
-            const newLocation = prompt('Enter your location:', document.getElementById('userLocation').textContent);
-            if (newLocation && newLocation.trim()) {
-                document.getElementById('userLocation').textContent = newLocation.trim();
-                localStorage.setItem('userLocation', newLocation.trim());
+            // Load phone number
+            const savedPhone = localStorage.getItem('userPhone');
+            if (savedPhone) {
+                // Format phone number for display
+                const formattedPhone = '+91 ' + savedPhone.slice(0, 5) + ' ' + savedPhone.slice(5);
+                document.getElementById('profilePhone').textContent = formattedPhone;
+            } else {
+                document.getElementById('profilePhone').textContent = '+91 ---------';
             }
         }
 
-        // Search functionality
-        document.querySelector('.hero-search button').addEventListener('click', function() {
-            const searchQuery = document.querySelector('.hero-search input').value;
-            if (searchQuery.trim()) {
-                alert('Searching for: ' + searchQuery);
+        // Show specific section
+        function showSection(sectionName) {
+            // Hide all sections
+            document.querySelectorAll('.section').forEach(section => {
+                section.classList.remove('active');
+            });
+
+            // Remove active class from all nav items
+            document.querySelectorAll('.nav-item').forEach(item => {
+                item.classList.remove('active');
+            });
+
+            // Show selected section
+            const targetSection = document.getElementById(sectionName + 'Section');
+            if (targetSection) {
+                targetSection.classList.add('active');
             }
-        });
 
-        // Service card click
-        document.querySelectorAll('.service-card').forEach(card => {
-            card.addEventListener('click', function() {
-                const serviceName = this.querySelector('.service-name').textContent;
-                alert('Booking: ' + serviceName);
-            });
-        });
+            // Add active class to corresponding nav item
+            const targetNavItem = document.querySelector(`.nav-item[data-section="${sectionName}"]`);
+            if (targetNavItem) {
+                targetNavItem.classList.add('active');
+            }
 
-        // Featured card click
-        document.querySelectorAll('.featured-btn').forEach(btn => {
-            btn.addEventListener('click', function() {
-                const serviceName = this.parentElement.querySelector('.featured-title').textContent;
-                alert('Booking: ' + serviceName);
-            });
-        });
+            // Reload user data when showing profile
+            if (sectionName === 'profile') {
+                loadUserData();
+            }
+        }
+
+        // Change location
+        function changeLocation() {
+            const newLocation = prompt('Enter your location:', document.getElementById('userLocation').textContent);
+            if (newLocation && newLocation.trim()) {
+                const trimmedLocation = newLocation.trim();
+                document.getElementById('userLocation').textContent = trimmedLocation;
+                document.getElementById('profileLocation').textContent = trimmedLocation;
+                localStorage.setItem('userLocation', trimmedLocation);
+            }
+        }
+
+        // Search service
+        function searchService() {
+            const query = document.querySelector('.hero-search input').value.trim();
+            if (query) {
+                alert('Searching for: ' + query);
+            } else {
+                alert('Please enter a service to search');
+            }
+        }
+
+        // Book service
+        function bookService(serviceName) {
+            alert('Booking: ' + serviceName);
+        }
+
+        // Edit profile
+        function editProfile() {
+            alert('Edit Profile - Feature coming soon!');
+        }
+
+        // Logout
+        function logout() {
+            if (confirm('Are you sure you want to logout?')) {
+                // Clear localStorage
+                localStorage.removeItem('userLocation');
+                localStorage.removeItem('userPhone');
+                
+                // Redirect to index
+                window.location.href = 'index.html';
+            }
+        }
     </script>
 </body>
 </html>
+

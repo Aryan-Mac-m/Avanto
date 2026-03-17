@@ -1,0 +1,134 @@
+/* respsive.css - Responsive Styles for Homepage Enhancement */
+
+/* Mobile First Approach */
+
+/* Base responsive utilities */
+@media (max-width: 480px) {
+    .navbar {
+        padding: 0 15px;
+        height: 60px;
+    }
+
+    .navbar-logo img {
+        width: 35px;
+        height: 35px;
+    }
+
+    .navbar-logo span {
+        font-size: 1.3rem;
+    }
+
+    .navbar-menu {
+        display: none;
+    }
+
+    .navbar-user {
+        gap: 8px;
+    }
+
+    .nav-icon-btn {
+        width: 36px;
+        height: 36px;
+        font-size: 1rem;
+    }
+
+    .hero-title {
+        font-size: 1.8rem !important;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem !important;
+    }
+
+    .hero-search {
+        flex-direction: column;
+        max-width: 100%;
+    }
+
+    .hero-search input {
+        padding: 15px 20px;
+        border-radius: 15px 15px 0 0;
+    }
+
+    .hero-search button {
+        border-radius: 0 0 15px 15px;
+        padding: 15px 30px;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+    .services-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 15px;
+    }
+
+    .services-view-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .services-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .services-view-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+}
+
+/* Tablet Portrait */
+@media (max-width: 900px) {
+    #servicesSection, #profileSection {
+        padding: 30px 20px;
+    }
+
+    .services-home-section {
+        padding: 40px 20px;
+    }
+
+    .section-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .profile-actions {
+        flex-direction: column;
+    }
+
+    .profile-info-list {
+        gap: 15px;
+    }
+}
+
+/* Landscape Mobile */
+@media (max-height: 500px) and (orientation: landscape) {
+    .hero-section {
+        padding: 30px 20px;
+    }
+
+    .hero-title {
+        font-size: 2rem;
+    }
+}
+
+/* High DPI Displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .service-icon img, .professional-img {
+        image-rendering: -webkit-optimize-contrast;
+    }
+}
+
+/* Print Styles */
+@print {
+    .navbar, .footer {
+        display: none;
+    }
+
+    .section:not(.active) {
+        display: block !important;
+    }
+}
+
